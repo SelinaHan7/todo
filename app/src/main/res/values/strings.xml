@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">2Do</string>
+    <string name="txtWelcome">Welcome to 2Do</string>
+
+    <!--    <string name="open_nav">Open Navigation Drawer</string>-->
+    <!--    <string name="close_nav">Close Navigation Drawer</string>-->
+
+    --login layout--
+    <string name="imgLogo">2Do logo</string>
+    <string name="edtUsername">User Name</string>
+    <string name="edtPassword">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="txtForgot">Forgot Password?</string>
+    <string name="txtSign">Create a New Account? Sign Up</string>
+    <string name="FB">Facebook</string>
+    <string name="GOO">Gmail</string>
+
+    --Reset Password layout--
+    <string name="ForgotPassword">Please enter your registered email to receive password resent link.</string>
+
+    --register layout--
+    <string name="logo">2Do Registration</string>
+    <string name="inputUser">User name</string>
+    <string name="inputEmail">Email address</string>
+    <string name="inputPassword">Enter password</string>
+    <string name="inputConfirmPassword">Enter password again</string>
+    <string name="btnSignUp">SIGN UP</string>
+    <string name="haveAccount">Already Have an Account? </string>
+    <string name="dateOfBirth">dd/mm/yy</string>
+    <string name="txtGender">Gender</string>
+    <string name="EditProfile">SAVE</string>
+    <string name="CancelEdit">CANCEL</string>
+
+    --Tasks layout--
+    <string name="tasks">To-do Tasks</string>
+    <string name="fab">Add Task</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="new_task">Add New Task</string>
+    <string name="save">SAVE</string>
+
+    --Navigation Drawer--
+    <string name="nav_drawer">Navigation Drawer</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
+
+</resources>
