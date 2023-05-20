@@ -3,16 +3,16 @@
     <solid
         android:color="@color/white"/>
     <corners
-        android:topLeftRadius="40dp"
-        android:topRightRadius="40dp"/>
+        android:topLeftRadius="60dp"
+        android:topRightRadius="60dp"/>
     <padding
         android:left="10dp"
         android:right="10dp"
         android:top="10dp"
         android:bottom="10dp"/>
     <stroke
-        android:width="2dp"
-        android:color="@color/purple_700"/>
+        android:width="8dp"
+        android:color="@color/teal_700"/>
 
 
 </shape>

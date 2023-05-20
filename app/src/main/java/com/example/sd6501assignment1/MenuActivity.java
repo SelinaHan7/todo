@@ -1,16 +1,20 @@
 package com.example.sd6501assignment1;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.sd6501assignment1.Adapter.ToDoAdapter;
@@ -18,16 +22,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
-public class MenuActivity extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity implements HomeFragment.RecyclerViewItemClickListener {
 //    Toolbar toolbar = findViewById(R.id.toolbar);
     FloatingActionButton fab;
     DrawerLayout drawerLayout;
     BottomNavigationView bottomNavigationView;
     NavigationView navigationView;
-//    HomeFragment homeFragment = new HomeFragment();
-//    ProfileFragment profileFragment = new ProfileFragment();
-//    CalendarFragment calendarFragment = new CalendarFragment();
 
+    private RecyclerView recyclerView;
+    private ToDoAdapter toDoAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +47,9 @@ public class MenuActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MenuActivity.this, AddTaskActivity.class));
+
+                AddNewTask.newInstance().show(getSupportFragmentManager(), AddNewTask.TAG);
+
             }
         });
 
@@ -81,7 +86,7 @@ public class MenuActivity extends AppCompatActivity {
 
         });
 
-        replaceFragment(new HomeFragment());
+        replaceFragment(new CalendarFragment());
 }
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -93,6 +98,17 @@ public class MenuActivity extends AppCompatActivity {
     private static ToDoAdapter taskAdapter;
 
     public static ToDoAdapter getTaskAdapter() {
+        Log.e("MenuActivity", "setAdapter");
         return taskAdapter;
+    }
+
+//    @Override
+//    public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+//
+//    }
+
+    @Override
+    public void onItemClick(int position) {
+
     }
 }

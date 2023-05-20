@@ -22,7 +22,7 @@
     <string name="logo">2Do Registration</string>
     <string name="inputUser">User name</string>
     <string name="inputEmail">Email address</string>
-    <string name="inputPassword">Enter password</string>
+    <string name="inputPassword">Enter password (more than 6 character)</string>
     <string name="inputConfirmPassword">Enter password again</string>
     <string name="btnSignUp">SIGN UP</string>
     <string name="haveAccount">Already Have an Account? </string>

@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
 
     @Override
     public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
+        Log.e("RecylerItemTouchHelper", "onSwiped");
         final int position = viewHolder.getAdapterPosition();
         if (direction == ItemTouchHelper.LEFT) {
             AlertDialog.Builder builder;

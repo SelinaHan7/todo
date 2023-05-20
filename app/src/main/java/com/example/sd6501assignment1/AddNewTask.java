@@ -3,10 +3,12 @@ package com.example.sd6501assignment1;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +32,7 @@ public class AddNewTask extends BottomSheetDialogFragment {
     private Button newTaskSaveButton;
 
     private DatabaseHandler db;
+
 
     public static AddNewTask newInstance(){
         return new AddNewTask();
@@ -103,6 +106,8 @@ public class AddNewTask extends BottomSheetDialogFragment {
         newTaskSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("SUBMIT ONCLICK", "addnewtask");
+
                 String text = newTaskText.getText().toString();
                 if(finalIsUpdate){
                     db.updateTask(bundle.getInt("id"), text);
@@ -112,7 +117,10 @@ public class AddNewTask extends BottomSheetDialogFragment {
                     task.setTask(text);
                     task.setStatus(0);
                     db.insertTask(task);
+
+                    Log.d("Add new task", "Added task succsesfully");
                 }
+                startActivity(new Intent(getActivity(), AddTaskActivity.class));
                 dismiss();
             }
         });
