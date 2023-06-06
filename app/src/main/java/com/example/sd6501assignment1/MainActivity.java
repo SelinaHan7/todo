@@ -19,8 +19,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
+
     ImageView imageLogo;
-    TextView txtWelcome;
     ProgressBar progressBar;
     int counter = 0;
 

@@ -3,12 +3,14 @@
     android:layout_height="wrap_content"
     android:background="@drawable/dialogbkg"
     android:backgroundTint="@color/teal_200"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:id="@+id/AddNewTask">
 
     <EditText
         android:id="@+id/newTaskText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:inputType="text"
         android:textSize="36dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -21,9 +23,10 @@
         android:layout_below="@id/newTaskText"
         android:textSize="26dp"
         android:layout_alignParentEnd="true"
+        android:backgroundTint="@color/purple_700"
         android:background="@android:color/transparent"
         android:text="@string/save"
         android:textAllCaps="false"
-        android:textColor="@color/purple_700" />
+        android:textColor="@color/purple_200" />
 
 </RelativeLayout>

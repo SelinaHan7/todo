@@ -2,6 +2,7 @@ package com.example.sd6501assignment1.Adapter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoAdapter.ViewHolder> {
         DatabaseHandler db;
         AddTaskActivity activity;
 
+        HomeFragment.RecyclerViewItemClickListener itemClickListener;
 public ToDoAdapter(DatabaseHandler db, AddTaskActivity activity) {
         this.db = db;
         this.activity = activity;
@@ -41,6 +43,7 @@ public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 @Override
 public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+        Log.e("ToDoAdapter", "onBindViewHolder");
         db.openDatabase();
 
 final ToDoModel item = todoList.get(position);
@@ -49,6 +52,7 @@ final ToDoModel item = todoList.get(position);
         holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 @Override
 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        Log.d("ToDoAdapter", "onCheckedChanged");
         if (isChecked) {
         db.updateStatus(item.getId(), 1);
         } else {
@@ -64,19 +68,23 @@ private boolean toBoolean(int n) {
 
 @Override
 public int getItemCount() {
+        Log.e("ToDoAdapter", "getItemCount");
         return todoList.size();
         }
 
 public Context getContext() {
+        Log.e("ToDoAdapter", "getContext");
         return activity;
         }
 
 public void setTasks(List<ToDoModel> todoList) {
         this.todoList = todoList;
+        Log.e("ToDoAdapter", "setTasks");
         notifyDataSetChanged();
         }
 
 public void deleteItem(int position) {
+        Log.e("ToDoAdapter", "deleteItem");
         ToDoModel item = todoList.get(position);
         db.deleteTask(item.getId());
         todoList.remove(position);
@@ -84,6 +92,7 @@ public void deleteItem(int position) {
         }
 
 public void editItem(int position) {
+        Log.e("ToDoAdapter", "editItem");
         ToDoModel item = todoList.get(position);
         Bundle bundle = new Bundle();
         bundle.putInt("id", item.getId());

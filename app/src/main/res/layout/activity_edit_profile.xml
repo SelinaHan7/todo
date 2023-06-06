@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditProfileActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:id="@+id/EditProfileActivity"
+    tools:ignore="InvalidId">
 
     <ImageView
         android:id="@+id/edit_ImgLogo"

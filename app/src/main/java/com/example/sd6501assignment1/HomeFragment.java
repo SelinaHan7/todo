@@ -25,6 +25,9 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     ToDoAdapter toDoAdapter;
     List<ToDoModel> taskList;
+    public interface RecyclerViewItemClickListener {
+        void onItemClick(int position);
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,26 +35,30 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        DatabaseHandler db = new DatabaseHandler(getActivity());
-        db.openDatabase();
-        List<ToDoModel> list =  db.getAllTasks();
-//        for (int i=0; i< list.size(); i++){
-//            Log.d("show list", "onCreateView: " + list);
+//        DatabaseHandler db = new DatabaseHandler(getActivity());
+//        db.openDatabase();
+
+        startActivity(new Intent(getActivity(), AddTaskActivity.class));
 //
-//        }
-
-        // Initialize taskList and taskAdapter
-        taskList = new ArrayList<>();
-
-        //ToDoAdapter taskAdapter = ((MenuActivity)getActivity()).getTaskAdapter();
-        toDoAdapter = ((MenuActivity)getActivity()).getTaskAdapter();
-
-        // Initialize RecyclerView
-        recyclerView = view.findViewById(R.id.tasksRecyclerViewHome);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(toDoAdapter);
-
-        // ...
+//        List<ToDoModel> list =  db.getAllTasks();
+////        for (int i=0; i< list.size(); i++){
+////            Log.d("show list", "onCreateView: " + list);
+////
+////        }
+//
+//        // Initialize taskList and taskAdapter
+//        taskList = new ArrayList<>();
+//
+//        //ToDoAdapter taskAdapter = ((MenuActivity)getActivity()).getTaskAdapter();
+//        toDoAdapter = ((MenuActivity)getActivity()).getTaskAdapter();
+//
+//        // Initialize RecyclerView
+//        recyclerView = view.findViewById(R.id.tasksRecyclerViewHome);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+//        Log.e("HomeFragment", "setAdapter");
+//        recyclerView.setAdapter(toDoAdapter);
+//
+//        // ...
 
         return view;
     }
